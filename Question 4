@@ -1,0 +1,56 @@
+#include <iostream>
+
+// Define the Box class
+class Box {
+private:
+    double length;
+    double breadth;
+    double height;
+
+public:
+    // (a) Default constructor: Initializes all values to 1
+    Box() : length(1.0), breadth(1.0), height(1.0) {
+        std::cout << "Default constructor (all 1) called." << std::endl;
+    }
+
+    // (b) Single-parameter constructor: Initializes all values to the single provided value
+    Box(double value) : length(value), breadth(value), height(value) {
+        std::cout << "Single parameter constructor called (all values set to " << value << ")." << std::endl;
+    }
+
+    // (c) Three-parameter constructor: Initializes all values with specific user inputs
+    Box(double l, double b, double h) : length(l), breadth(b), height(h) {
+        std::cout << "Three parameters constructor called (" 
+                  << l << ", " << b << ", " << h << ")." << std::endl;
+    }
+
+    // Member function to calculate and display the volume
+    void displayVolume() {
+        double volume = length * breadth * height;
+        std::cout << "Dimensions: " << length << "x" << breadth << "x" << height << std::endl;
+        std::cout << "Volume of the box: " << volume << std::endl;
+    }
+};
+
+// Main function to demonstrate the use of the overloaded constructors
+int main() {
+    // Case (a): Default constructor (all values as 1)
+    std::cout << "--- Box 1: Default Dimensions (1x1x1) ---" << std::endl;
+    Box box1;
+    box1.displayVolume();
+    std::cout << std::endl;
+
+    // Case (b): Single parameter (all values set to 5.0)
+    std::cout << "--- Box 2: Cube (All sides 5.0) ---" << std::endl;
+    Box box2(5.0);
+    box2.displayVolume();
+    std::cout << std::endl;
+
+    // Case (c): Three parameters (specific length, breadth, height)
+    std::cout << "--- Box 3: Custom Dimensions (2.5x3.0x4.0) ---" << std::endl;
+    Box box3(2.5, 3.0, 4.0);
+    box3.displayVolume();
+    std::cout << std::endl;
+
+    return 0;
+}
