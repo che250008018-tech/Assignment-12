@@ -1,0 +1,57 @@
+#include <iostream>
+using namespace std;
+
+class Complex {
+private:
+    double real;
+    double imaginary;
+
+public:
+    // Constructor 1: Default constructor (real = 0, imaginary = 0)
+    Complex() {
+        real = 0;
+        imaginary = 0;
+    }
+
+    // Constructor 2: Constructor with only the real part (imaginary = 0)
+    Complex(double r) {
+        real = r;
+        imaginary = 0;
+    }
+
+    // Constructor 3: Constructor with both real and imaginary parts
+    Complex(double r, double i) {
+        real = r;
+        imaginary = i;
+    }
+
+    // Method to display the complex number in the form a + bi
+    void display() const {
+        if (imaginary >= 0)
+            cout << real << " + " << imaginary << "i" << endl;
+        else
+            cout << real << " - " << -imaginary << "i" << endl;
+    }
+};
+
+int main() {
+    // Demonstrating all three constructors through different objects
+
+    // 1. Default constructor (real = 0, imaginary = 0)
+    Complex complex1;
+    complex1.display();  // Output: 0 + 0i
+
+    // 2. Constructor with only the real part (imaginary = 0)
+    Complex complex2(5);
+    complex2.display();  // Output: 5 + 0i
+
+    // 3. Constructor with both real and imaginary parts
+    Complex complex3(3, 4);
+    complex3.display();  // Output: 3 + 4i
+
+    // 4. Constructor with both real and imaginary parts where imaginary is negative
+    Complex complex4(2, -7);
+    complex4.display();  // Output: 2 - 7i
+
+    return 0;
+}
