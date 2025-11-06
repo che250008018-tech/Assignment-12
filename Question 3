@@ -1,0 +1,42 @@
+#include <iostream>
+#include <string> // Required for using string data type
+
+// Define the Car class
+class Car {
+private:
+    std::string brand;
+    double price;
+
+public:
+    // Parameterized constructor: Initializes brand and price with user-given values
+    Car(std::string carBrand, double carPrice) : brand(carBrand), price(carPrice) {
+        std::cout << "A new car object has been created using the constructor." << std::endl;
+    }
+
+    // Member function to display the details of the car
+    void displayDetails() {
+        std::cout << "Brand: " << this->brand << std::endl;
+        std::cout << "Price: $" << this->price << std::endl;
+    }
+};
+
+// Main function to demonstrate the use of the class and parameterized constructor
+int main() {
+    std::cout << "--- Creating Car Object 1 ---" << std::endl;
+    // Create the first car object using the parameterized constructor
+    Car car1("Toyota", 25000.00);
+
+    std::cout << "\n--- Displaying Details for Car 1 ---" << std::endl;
+    // Display the details for the first car
+    car1.displayDetails();
+
+    std::cout << "\n--- Creating Car Object 2 ---" << std::endl;
+    // Create the second car object with different values
+    Car car2("Honda", 28500.75);
+
+    std::cout << "\n--- Displaying Details for Car 2 ---" << std::endl;
+    // Display the details for the second car
+    car2.displayDetails();
+
+    return 0;
+}
