@@ -1,0 +1,45 @@
+#include <iostream>
+
+// Define the Rectangle class
+class Rectangle {
+private:
+    double length;
+    double breadth;
+
+public:
+    // Default constructor: Initializes length and breadth to 1
+    Rectangle() : length(1.0), breadth(1.0) {
+        std::cout << "Default constructor called." << std::endl;
+    }
+
+    // Parameterized constructor: Initializes with user-given values
+    // Using an initializer list for concise initialization
+    Rectangle(double l, double b) : length(l), breadth(b) {
+        std::cout << "Parameterized constructor called." << std::endl;
+    }
+
+    // Member function to calculate and display the area
+    void displayArea() {
+        double area = length * breadth;
+        std::cout << "The area of the rectangle is: " << area << std::endl;
+    }
+};
+
+// Main function to demonstrate the use of the class and constructors
+int main() {
+    // 1. Create an object using the default constructor
+    std::cout << "--- Creating default rectangle object ---" << std::endl;
+    Rectangle rectDefault;
+    rectDefault.displayArea();
+
+    std::cout << std::endl;
+
+    // 2. Create an object using the parameterized constructor
+    std::cout << "--- Creating parameterized rectangle object ---" << std::endl;
+    double userLength = 5.0;
+    double userBreadth = 3.5;
+    Rectangle rectParameterized(userLength, userBreadth);
+    rectParameterized.displayArea();
+
+    return 0;
+}
